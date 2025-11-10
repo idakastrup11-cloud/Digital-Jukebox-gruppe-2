@@ -95,11 +95,6 @@ button:hover {
   text-align: right; /* Flytter teksten i elementet helt til højre */
 }
 
-
-    padding: 10px 20 px;
- }
-
-
 .table {
   border-collapse: separate;  /* Giver der lov til at være plads i mellem rækkerne */
   border-spacing: 0 12px;    
