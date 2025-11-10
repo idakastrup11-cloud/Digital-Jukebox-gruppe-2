@@ -26,3 +26,34 @@ body {
     margin: 5px;
     padding: 10px 20 px;
  }
+body {
+  margin: 0; /* Fjerner standard margin fra browseren, så siden går helt til kanten */
+  font-family: Arial, sans-serif; /* Sætter skrifttypen til Arial, og fallback til sans-serif hvis Arial ikke findes */
+}
+
+.top-box {
+  display: flex; /* Gør boksen til en flex-container, så indholdet kan ligge på linje (vandret) */
+  justify-content: space-between; /* Fordeler elementerne: venstre helt til venstre, højre helt til højre, midten i midten */
+  align-items: center; /* Centrerer elementerne lodret i boksen */ 
+  background-color: #ce0707; /* Sætter baggrundsfarven */
+  color: rgb(255, 255, 255); /*Gør al tekst hvid */
+  padding: 10px 20px; /*Laver luft inde i boksen (10px top/bund, 20px venstre/højre) */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2); /* Tilføjer en let skygge under boksen */
+  position: sticky; /*Gør boksen “klæbrig”, så den bliver øverst på siden ved scroll */
+  top: 0; /*Fastgør boksen til toppen af vinduet */ 
+}
+
+.left, .center, .right { 
+  flex: 1; /* Giv alle tre elementer lige meget plads, og lad dem vokse eller skrumpe efter behov */
+}
+
+.center {
+  text-align: center; /*Centrerer teksten horisontalt inde i elementet */
+  font-size: 1.3rem; /* Gør teksten større, relativt til root-font-size */
+  font-weight: bold; /* Gør teksten fed (tykkere) */
+}
+
+.right {
+  text-align: right; /* Flytter teksten i elementet helt til højre */
+}
+
