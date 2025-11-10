@@ -18,3 +18,11 @@ function selectSong() { // Funktionen der kørern når man klikker på select/ad
     message.textContent = "You can only select 3 songs!"; //Hvis selected count er større end 3, giv beskeden:
   }
 }
+
+// Funktion til overskiften 'Jukebox' som genindlæser siden
+document.getElementById('home-button').addEventListener('click', function() {
+  let confirmRefresh = confirm("Vil du nulstille siden?");
+  if(confirmRefresh) {
+    location.reload(); // refresher siden
+  }
+});
