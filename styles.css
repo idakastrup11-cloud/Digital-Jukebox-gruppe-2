@@ -1,0 +1,13 @@
+body {
+    background-color: #9b0fab;
+    font-family: arial, serif;
+    color: #FFFFFF
+}
+
+#searchbar {
+    padding: 15px;
+    width: 100px;
+    border-radius: 25px;
+    border-color:black;
+    background-color: #FFFFFF;
+}
