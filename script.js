@@ -24,3 +24,11 @@ function selectSong() {
     }, 1500);
   }
 }
+
+// Funktion til overskiften 'Jukebox' som genindlæser siden
+document.getElementById('home-button').addEventListener('click', function() {
+  let confirmRefresh = confirm("Vil du nulstille siden?");
+  if(confirmRefresh) {
+    location.reload(); // refresher siden
+  }
+});
