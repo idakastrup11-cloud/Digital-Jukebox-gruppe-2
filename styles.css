@@ -4,11 +4,17 @@ body {
 
 #searchbar {
     padding: 15px;
-    width: 100px;
+    width: 400px;
     border-radius: 25px;
     border-color:black;
+    transition: background 0.2s;
     background-color: #FFFFFF;
 }
+
+#searchbar:hover {
+    background-color: #dedede;
+}
+
 .box {
   border: 10px solid black;
   padding: 20px;
