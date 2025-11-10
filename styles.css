@@ -53,6 +53,19 @@ body {
   font-weight: bold; /* Gør teksten fed (tykkere) */
 }
 
+#home-button {
+  background: none;     /* Ingen baggrund */
+  border: none;         /* Ingen kant */
+  color: white;         /* Tekstfarve */
+  font-size: 1.3rem;
+  font-weight: bold;
+  cursor: pointer;      /* Markør bliver hånd */
+}
+
+#home-button:hover {
+  color: rgb(16, 16, 0);        /* Lidt effekt ved hover */
+}
+
 .right {
   text-align: right; /* Flytter teksten i elementet helt til højre */
 }
