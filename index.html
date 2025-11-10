@@ -1,8 +1,32 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
-        <link rel="stylesheet" href="styles.css">
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Sørger for at siden skalerer korrekt på mobil/tablet-->
+    <title>Jukebox</title> <!-- Titel der vises i browser-fanen -->
+    <link rel="stylesheet" href="styles.css"> <!-- Kobler CSS-fil med styling -->
     </head>
+   
     <body>
+    <header class="top-box"> <!-- Top-box / header som flex-container -->
+    <div class="left"> <!-- Venstre side af top-box -->
+        <div>1 Song = 2 DKK</div> <!-- Første linje med pris -->
+        <div>3 Songs = 5 DKK</div> <!-- Anden linje med pris -->
+    </div>
+
+    <div class="center">
+  <button id="home-button">🎵 Jukebox 🎵</button>
+    </div>
+    
+    <div class="right"> <!-- Højre side af top-box -->
+      <span class="review-text">Review (0)</span> <!-- Med (span) Kun tallet opdateres — teksten 'Review' er uændret -->
+    </div>
+  </header>
+       
+     <div class="searchbar-container">
+        <input type="text" id="searchbar" placeholder="Søg efter sange, artister, albums...">
+        </div>
+ 
         <table class="table">
             <caption>Top 10 Songs</caption>
             <thead>
@@ -85,14 +109,21 @@
        </div>
 
        <div class="box">
-        <p id="status">You have selected 0 songs.</p>
-       </div>
+        <p id="status">You have selected 0 songs.</p> <!--Her vises hvor mange sange der er valgt-->
+
+
+       </div><!-- Knapperne kalder funktionen "selectSong()" når man klikker -->
        <button onclick="selectSong()">song 1</button>
        <button onclick="selectSong()">song 2</button>
        <button onclick="selectSong()">song 3</button>
 
-       <p id="message"></p>
-
        <script src="script.js"></script>
+       <p id="message"></p><!-- Her vises en besked hvis man prøver at vælge for mange -->
+
+
+       
+
+       <script src="script.js"></script> <!-- Her hentes JavaScript-filen, som styrer logikken -->
     </body>
 </html>
+
