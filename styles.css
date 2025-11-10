@@ -16,19 +16,44 @@ body {
 }
 
 .box {
-  border: 10px solid black;
-  padding: 20px;
-  width: 200px;
-  margin: 20px auto;
-  border-radius: 10px;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, #7e3a3a, #e3873c); /* gradient baggrund */
+    border: 2px solid #333;
+    padding: 15px 40px;
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: background 0.3s; /* gør gradient-ændring glat */
 }
- button {
+
+.box.highlight {
+  background: linear-gradient(90deg, #edfa05, #f4e808);/* Når vi vil “lyse op” */
+}
+
+button {
     margin: 5px;
-    padding: 10px 20 px;
- }
-body {
-  margin: 0; /* Fjerner standard margin fra browseren, så siden går helt til kanten */
-  font-family: Arial, sans-serif; /* Sætter skrifttypen til Arial, og fallback til sans-serif hvis Arial ikke findes */
+    padding: 10px 20px;
+  border-radius: 10px;
+  border: 1px solid #444;
+  cursor: pointer;
+  background-color: #eee;
+}
+
+button:hover {
+  background-color: #ddd;
+}
+/*Besked kommer liger over "box"*/
+#message {
+  position: absolute;
+  bottom: 90px; /* lidt over boksen */
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgb(5, 1, 1);
+  font-weight: bold;
+  opacity: 0; /* start skjult */
+  transition: opacity 1.5s; /* fade ud over 1,5 sek */
 }
 
 .top-box {
