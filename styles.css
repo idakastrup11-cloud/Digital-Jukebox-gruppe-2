@@ -1,5 +1,5 @@
 body {
-    color: #FFFFFF
+    color: #000000
 }
 
 #searchbar {
@@ -23,6 +23,5 @@ body {
 
 
 table {
-    border: 2px black;
-    
+    border: 2px black; 
 }
