@@ -1,4 +1,26 @@
 body {
+    color: #FFFFFF
+}
+
+#searchbar {
+    padding: 15px;
+    width: 100px;
+    border-radius: 25px;
+    border-color:black;
+    background-color: #FFFFFF;
+}
+.box {
+  border: 10px solid black;
+  padding: 20px;
+  width: 200px;
+  margin: 20px auto;
+  border-radius: 10px;
+}
+ button {
+    margin: 5px;
+    padding: 10px 20 px;
+ }
+body {
   margin: 0; /* Fjerner standard margin fra browseren, så siden går helt til kanten */
   font-family: Arial, sans-serif; /* Sætter skrifttypen til Arial, og fallback til sans-serif hvis Arial ikke findes */
 }
