@@ -22,10 +22,13 @@
      <div class="searchbar-container">
         <input type="text" id="searchbar" placeholder="Søg efter sange, artister, albums...">
         </div>
+ 
 
        <div class="box">
-        <p id="status">You have selected 0 songs.</p>
-       </div>
+        <p id="status">You have selected 0 songs.</p> <!--Her vises hvor mange sange der er valgt-->
+
+
+       </div><!-- Knapperne kalder funktionen "selectSong()" når man klikker -->
        <button onclick="selectSong()">song 1</button>
        <button onclick="selectSong()">song 2</button>
        <button onclick="selectSong()">song 3</button>
@@ -35,6 +38,12 @@
        <p id="message"></p>
 
        <script src="script.js"></script>
+       <p id="message"></p><!-- Her vises en besked hvis man prøver at vælge for mange -->
+
+
+       
+
+       <script src="script.js"></script> <!-- Her hentes JavaScript-filen, som styrer logikken -->
     </body>
 </html>
 
