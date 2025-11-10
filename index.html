@@ -1,17 +1,30 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
-        <link rel="stylesheet" href="styles.css">
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Sørger for at siden skalerer korrekt på mobil/tablet-->
+    <title>Jukebox</title> <!-- Titel der vises i browser-fanen -->
+    <link rel="stylesheet" href="styles.css"> <!-- Kobler CSS-fil med styling -->
     </head>
+   
     <body>
-
+    <header class="top-box"> <!-- Top-box / header som flex-container -->
+    <div class="left"> <!-- Venstre side af top-box -->
+        <div>1 Song = 2 DKK</div> <!-- Første linje med pris -->
+        <div>3 Songs = 5 DKK</div> <!-- Anden linje med pris -->
+    </div>
+    <div class="center">🎵Jukebox🎵</div> <!-- Midterste del med overskrift -->
+    <div class="right"> <!-- Højre side af top-box -->
+      <span class="review-text">Review (0)</span> <!-- Med (span) Kun tallet opdateres — teksten 'Review' er uændret -->
+    </div>
+  </header>
 
        <div class="searchbar-container">
-        <input type="text" id="searchbar" placeholder="Søg efter sange, artister, albums..."
+        <input type="text" id="searchbar" placeholder="Søg efter sange, artister, albums...">
        </div>
         
        
-       
-
+    
        <div class="box">
         <p id="status">You have selected 0 songs.</p>
        </div>
@@ -23,26 +36,5 @@
 
        <script src="script.js"></script>
     </body>
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Sørger for at siden skalerer korrekt på mobil/tablet-->
-    <title>Jukebox</title> <!-- Titel der vises i browser-fanen -->
-    <link rel="stylesheet" href="styles.css"> <!-- Kobler CSS-fil med styling -->
-</head>
-<body>
 
-  <header class="top-box"> <!-- Top-box / header som flex-container -->
-    <div class="left"> <!-- Venstre side af top-box -->
-        <div>1 Song = 2 DKK</div> <!-- Første linje med pris -->
-        <div>3 Songs = 5 DKK</div> <!-- Anden linje med pris -->
-    </div>
-    <div class="center">🎵Jukebox🎵</div> <!-- Midterste del med overskrift -->
-    <div class="right"> <!-- Højre side af top-box -->
-      <span class="review-text">Review (0)</span> <!-- Med (span) Kun tallet opdateres — teksten 'Review' er uændret -->
-    </div>
-  </header>
-
-</body>
-</html>

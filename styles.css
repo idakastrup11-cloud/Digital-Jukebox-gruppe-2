@@ -30,7 +30,7 @@ body {
   justify-content: space-between; /* Fordeler elementerne: venstre helt til venstre, højre helt til højre, midten i midten */
   align-items: center; /* Centrerer elementerne lodret i boksen */ 
   background-color: #ce0707; /* Sætter baggrundsfarven */
-  color: white; /*Gør al tekst hvid */
+  color: rgb(255, 255, 255); /*Gør al tekst hvid */
   padding: 10px 20px; /*Laver luft inde i boksen (10px top/bund, 20px venstre/højre) */
   box-shadow: 0 2px 8px rgba(0,0,0,0.2); /* Tilføjer en let skygge under boksen */
   position: sticky; /*Gør boksen “klæbrig”, så den bliver øverst på siden ved scroll */
