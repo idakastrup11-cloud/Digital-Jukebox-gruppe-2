@@ -1,5 +1,5 @@
 body {
-    color: #FFFFFF
+    color: #000000
 }
 
 #searchbar {
@@ -95,3 +95,44 @@ button:hover {
   text-align: right; /* Flytter teksten i elementet helt til højre */
 }
 
+
+    padding: 10px 20 px;
+ }
+
+
+.table {
+  border-collapse: separate;  /* Giver der lov til at være plads i mellem rækkerne */
+  border-spacing: 0 12px;    
+  width: 35%;
+  border: 1px solid black;              
+}
+
+/* Gør hver række sin egen boks */
+.table tr {
+  background-color: #fff;
+  border: 2px solid #444;   
+  border-radius: 10px;          /* runder hjøner */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* Giver lidt skygge til boksene */
+}
+
+.table th, 
+.table td {
+  padding: 12px;
+  text-align: center;
+  border: none;
+}
+
+/* Header */
+.table th {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  border: none;
+  text-transform: uppercase;
+}
+
+/* Giver den flyvende effekt */
+.table tr:hover {
+  background-color: #f5f5f5;
+  transform: scale(1.01);
+  transition: 0.2s ease;
+}
