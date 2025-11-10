@@ -3,3 +3,14 @@ body {
     font-family: arial, serif;
     color: #FFFFFF
 }
+.box {
+  border: 10px solid black;
+  padding: 20px;
+  width: 200px;
+  margin: 20px auto;
+  border-radius: 10px;
+}
+ button {
+    margin: 5px;
+    padding: 10px 20 px;
+ }
