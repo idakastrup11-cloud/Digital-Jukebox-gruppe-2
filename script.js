@@ -10,19 +10,23 @@ function calculatePrice(count) {
 }
 
 function selectSong(songName) {
-  const message = document.getElementById("message");
-  if (selectedCount < 3) {
-    selectedCount++;
-    selectedSongs.push(songName);
+  const message = document.getElementById("message");// Find HTML-element til besked
+  if (selectedCount < 3) {// Tjek om der er valgt mindre end 3 sange
+    selectedCount++;// Øg antal valgte sange
+    selectedSongs.push(songName);// Tilføj sang til listen over valgte sange
 
-    // Opdater review-knappen
-    const reviewBtn = document.getElementById("review-button");
-    reviewBtn.textContent = `Review (${selectedCount})`;
+   
+    const reviewBtn = document.getElementById("review-button"); // Find knappen med id "review-button"
+    reviewBtn.textContent = `Review (${selectedCount})`;    // Opdater knapteksten til at vise antal valgte sange
 
+    //Ellers giv fejlmeddelse
   } else {
-    message.textContent = "You can only select 3 songs!";
-    message.style.opacity = 1;
+    message.textContent = "You can only select 3 songs!";  // Hvis der allerede er valgt 3 sange // Vis besked til brugeren
+    message.style.opacity = 1;    // Sørg for koden er synlig
 
+
+
+    // Gør at fejlmeddelsen fader efter 1,5 sek
     setTimeout(() => {
       message.style.opacity = 0;
     }, 1500);
@@ -30,34 +34,34 @@ function selectSong(songName) {
 }
 
 
-// Når man trykker på REVIEW-knappen
+// Tilføj en "click"-eventlistener til knappen med id "review-button"
+// addEventListener lytter efter en bestemt hændelse (her "click")
+// Når knappen klikkes, udføres den tilknyttede funktion
 document.getElementById("review-button").addEventListener("click", function () {
-  const panel = document.getElementById("review-panel");
-  const list = document.getElementById("song-list");
-  const priceInfo = document.getElementById("price-info");
+  const panel = document.getElementById("review-panel");  // Find panelet der viser valgte sange
+  const list = document.getElementById("song-list");  // Find listen hvor valgte sange skal vises
+  const priceInfo = document.getElementById("price-info");  // Find element til prisinformation
 
-  // Tøm listen
-  list.innerHTML = "";
+
+  list.innerHTML = "";// Rydder indholdet af sanglisten - innerHTML = "" fjerner alle tidligere listeelementer
 
   // Tilføj valgte sange
-  selectedSongs.forEach(song => {
-    const li = document.createElement("li");
-    li.textContent = song;
-    list.appendChild(li);
+  selectedSongs.forEach(song => { // Loop gennem alle valgte sange og tilføj dem til listen
+    const li = document.createElement("li");  // Opret et nyt listeelement (li)
+    li.textContent = song;  // Sæt sangens navn som tekst i listeelementet
+    list.appendChild(li);  // Tilføj listeelementet til sanglisten i panelet
   });
 
-  // Beregn pris
-  const price = calculatePrice(selectedCount);
-  priceInfo.textContent = `Total price: ${price} DKK`;
+  const price = calculatePrice(selectedCount);// Beregn pris baseret på antal valgte sange
+  priceInfo.textContent = `Total price: ${price} DKK`;// Opdater prisinformation i panelet
+  panel.style.display = "block";  // Gør at panelet vises efter man har trykket på review-knappen.
 
-  // Vis panelet
-  panel.style.display = "block";
 });
 
 
-// Home-knap (samme som før)
+// Home-knap som gør vi genindlæser + man bliver spurgt om man er sikker
 document.getElementById('home-button').addEventListener('click', function() {
-  let confirmRefresh = confirm("Vil du nulstille siden?");
+  let confirmRefresh = confirm("Start over?");
   if (confirmRefresh) {
     location.reload();
   }
