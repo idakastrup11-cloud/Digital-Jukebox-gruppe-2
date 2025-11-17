@@ -95,7 +95,8 @@ button:hover {
   text-align: right; /* Flytter teksten i elementet helt til højre */
 }
 
-.top_10 {
+.top_10,
+.queue {
   border-collapse: separate;  /* Giver der lov til at være plads i mellem rækkerne */
   border-spacing: 0 12px;    
   width: 35%; 
@@ -103,7 +104,8 @@ button:hover {
 }
 
 /* Gør hver række sin egen boks */
-.top_10 tr {
+.top_10 tr,
+.queue tr {
   background-color: #fff;
   border: 2px solid #444;   
   border-radius: 10px;          /* runder hjøner */
@@ -111,14 +113,17 @@ button:hover {
 }
 
 .top_10 th, 
-.top_10 td {
+.top_10 td,
+.queue th,
+.queue td {
   padding: 12px;
   text-align: center;
   border: none;
 }
 
 /* Header */
-.top_10 th {
+.top_10 th,
+.queue th{
   background-color: #ffffff;
   color: rgb(0, 0, 0);
   border: none;
@@ -126,33 +131,7 @@ button:hover {
 }
 
 /* Giver den flyvende effekt */
-.top_10 tr:hover {
-  background-color: #f5f5f5;
-  transform: scale(1.01);
-  transition: 0.2s ease;
-}
-
-.queue {
- border-collapse: separate;  /* Giver der lov til at være plads i mellem rækkerne */
-  border-spacing: 0 12px;    
-  width: 35%; 
-  border: 1px solid black;              
-}
-
-.queue th
-.queue td {
-  padding: 12px;
-  text-align: center;
-  border: none;
-}
-
-.queue th {
-  background-color: #ffffff;
-  color: rgb(0, 0, 0);
-  border: none;
-  text-transform: uppercase;
-}
-
+.top_10 tr:hover,
 .queue tr:hover {
   background-color: #f5f5f5;
   transform: scale(1.01);
