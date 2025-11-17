@@ -9,6 +9,13 @@
    
     <body>
     <header class="top-box"> <!-- Top-box / header som flex-container -->
+
+        <div id="reviewDropdown" class="review-dropdown" style="display:none;">
+    <h3>Dine valgte sange</h3>
+    <ul id="songList"></ul>
+    <button id="paymentButton">Videre til betaling</button>
+        </div>
+
     <div class="left"> <!-- Venstre side af top-box -->
         <div>1 Song = 2 DKK</div> <!-- Første linje med pris -->
         <div>3 Songs = 5 DKK</div> <!-- Anden linje med pris -->
@@ -23,6 +30,11 @@
     </div>
   </header>
  
+    <button onclick="selectSong('Sang 1')">Sang 1</button>
+    <button onclick="selectSong('Sang 2')">Sang 2</button>
+    <button onclick="selectSong('Sang 3')">Sang 3</button>
+    <button onclick="selectSong('Sang 4')">Sang 4</button>
+
         <table class="table">
             <caption>Top 10 Songs</caption>
             <thead>

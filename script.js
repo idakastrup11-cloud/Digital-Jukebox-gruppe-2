@@ -32,3 +32,48 @@ document.getElementById('home-button').addEventListener('click', function() {
     location.reload(); // refresher siden
   }
 });
+
+// Review funktioner
+let selectedSongs = [];
+const maxSongs = 3;
+
+function selectSong(songName) {
+    if (selectedSongs.length >= maxSongs) {
+        alert("Du har allerede valgt maksimalt antal sange (3).");
+        return;
+    }
+
+    selectedSongs.push(songName);
+    updateReviewCounter();
+    updateSongList();
+}
+
+function updateReviewCounter() {
+    const reviewSpan = document.querySelector(".review-text");
+    reviewSpan.textContent = `Review (${selectedSongs.length})`;
+}
+
+function updateSongList() {
+    const list = document.getElementById("songList");
+    list.innerHTML = "";
+
+    selectedSongs.forEach(song => {
+        const li = document.createElement("li");
+        li.textContent = song;
+        list.appendChild(li);
+    });
+}
+
+function toggleReviewDropdown() {
+    const dropdown = document.getElementById("reviewDropdown");
+    dropdown.style.display = dropdown.style.display === "none" ? "block" : "none";
+}
+
+// Gør review-teksten klikbar:
+document.querySelector(".review-text").addEventListener("click", toggleReviewDropdown);
+
+// Payment-knap (placeholder)
+document.getElementById("paymentButton").addEventListener("click", () => {
+    alert("Her kommer betaling-siden senere!");
+});
+// Review funktioner
