@@ -67,30 +67,35 @@ body {
   text-align: right; /* Flytter teksten i elementet helt til højre */
 }
 
-.table {
+.top_10,
+.queue {
   border-collapse: separate;  /* Giver der lov til at være plads i mellem rækkerne */
   border-spacing: 0 12px;    
-  width: 35%;
+  width: 35%; 
   border: 1px solid black;              
 }
 
 /* Gør hver række sin egen boks */
-.table tr {
+.top_10 tr,
+.queue tr {
   background-color: #fff;
   border: 2px solid #444;   
   border-radius: 10px;          /* runder hjøner */
   box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* Giver lidt skygge til boksene */
 }
 
-.table th, 
-.table td {
+.top_10 th, 
+.top_10 td,
+.queue th,
+.queue td {
   padding: 12px;
   text-align: center;
   border: none;
 }
 
 /* Header */
-.table th {
+.top_10 th,
+.queue th{
   background-color: #ffffff;
   color: rgb(0, 0, 0);
   border: none;
@@ -98,7 +103,8 @@ body {
 }
 
 /* Giver den flyvende effekt */
-.table tr:hover {
+.top_10 tr:hover,
+.queue tr:hover {
   background-color: #f5f5f5;
   transform: scale(1.01);
   transition: 0.2s ease;
