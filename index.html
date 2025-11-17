@@ -1,38 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Sørger for at siden skalerer korrekt på mobil/tablet-->
-    <title>Jukebox</title> <!-- Titel der vises i browser-fanen -->
-    <link rel="stylesheet" href="styles.css"> <!-- Kobler CSS-fil med styling -->
-    </head>
-   
-    <body>
-    <header class="top-box"> <!-- Top-box / header som flex-container -->
-    <div class="left"> <!-- Venstre side af top-box -->
-        <div>1 Song = 2 DKK</div> <!-- Første linje med pris -->
-        <div>3 Songs = 5 DKK</div> <!-- Anden linje med pris -->
-    </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jukebox</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
+<header class="top-box">
+    <div class="left">
+        <div>1 Song = 2 DKK</div>
+        <div>3 Songs = 5 DKK</div>
+    </div>
     <div class="center">
-  <button id="home-button">🎵 Jukebox 🎵</button>
+        <button id="home-button">🎵 Jukebox 🎵</button>
     </div>
-    
-    <div class="right"> <!-- Højre side af top-box -->
-  <button id="review-button" class="review-btn">Review (0)</button><!-- Med (span) Kun tallet opdateres — teksten 'Review' er uændret -->
+    <div class="right">
+        <button id="review-button" class="review-btn">Review (0)</button>
     </div>
-  </header>
- 
-        <table class="top_10">
-            <caption>Top 10 Songs</caption>
-            <thead>
+</header>
+
+<!-- Searchbar over tabellerne -->
+<div class="searchbar-container">
+    <input type="text" id="searchbar" placeholder="Søg efter sange, artister, albums...">
+</div>
+
+<!-- Container til Top 10 og Queue -->
+<div class="tables-container">
+    <!-- Top 10 tabel -->
+    <table class="top_10">
+        <caption>Top 10 Songs</caption>
+        <thead>
             <tr>
                 <th>Number</th>
                 <th>Song</th>
                 <th>Artist</th>
+                <th>Action</th>
             </tr>
-            </thead>
-            <tbody>
+        </thead>
+        <tbody>
             <tr>
                 <td>1</td>
                 <td>Enter Sandman</td>
@@ -84,27 +91,30 @@
             <tr>
                 <td>9</td>
                 <td>Boulevard of Broken Dreams</td>
-                <td>Green day</td>
+                <td>Green Day</td>
                 <td><button onclick="selectSong('Boulevard of Broken Dreams')">Select</button></td>
             </tr>
             <tr>
                 <td>10</td>
                 <td>The Box</td>
-                <td>Roddy Rich</td>
+                <td>Roddy Ricch</td>
                 <td><button onclick="selectSong('The Box')">Select</button></td>
             </tr>
         </tbody>
+    </table>
 
-                <table class="queue">
-            <caption>Queue</caption>
-            <thead>
+    <!-- Queue tabel -->
+    <table class="queue">
+        <caption>Queue</caption>
+        <thead>
             <tr>
                 <th>Position</th>
                 <th>Song</th>
                 <th>Artist</th>
+                <th>Action</th>
             </tr>
-            </thead>
-            <tbody>
+        </thead>
+        <tbody>
             <tr>
                 <td>1</td>
                 <td>Blinding Lights</td>
@@ -134,11 +144,13 @@
                 <td>6</td>
                 <td>Drivers License</td>
                 <td>Oliva Rodrigo</td>
+                <td>Select</td>
             </tr>
             <tr>
                 <td>7</td>
                 <td>Can't Stop the Feeling!</td>
                 <td>Justin Timerlake</td>
+                <td>Select</td>
             </tr>
             <tr>
                 <td>8</td>
@@ -156,27 +168,20 @@
                 <td>Ariana Grande</td>
             </tr>
         </tbody>
-        
-       <div class="searchbar-container">
-        <input type="text" id="searchbar" placeholder="Søg efter sange, artister, albums...">
-       </div>
+    </table>
+</div>
 
-        <div id="review-panel" class="review-panel" style="display:none;">
-            <h3>Your Selection</h3>
-            <ul id="song-list"></ul>
+<!-- Review panel -->
+<div id="review-panel" class="review-panel" style="display:none;">
+    <h3>Your Selection</h3>
+    <ul id="song-list"></ul>
+    <p id="price-info"></p>
+    <button id="purchase-btn">Purchase</button>
+</div>
 
-            <p id="price-info"></p>
+<!-- Besked til brugeren -->
+<p id="message"></p>
 
-            <button id="purchase-btn">Purchase</button>
-        </div>
-
-       <script src="script.js"></script>
-       <p id="message"></p><!-- Her vises en besked hvis man prøver at vælge for mange -->
-
-
-       
-
-       <script src="script.js"></script> <!-- Her hentes JavaScript-filen, som styrer logikken -->
-    </body>
+<script src="script.js"></script>
+</body>
 </html>
-

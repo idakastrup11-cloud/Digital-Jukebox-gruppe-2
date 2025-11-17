@@ -1,142 +1,147 @@
+/* Generelt */
 body {
-    color: #000000
+    color: #000;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
 }
 
+/* Top-box / header */
+.top-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ce0707;
+    color: #fff;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.left, .center, .right { flex: 1; }
+.center { text-align: center; font-size: 1.3rem; font-weight: bold; }
+.right { text-align: right; }
+
+#home-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.3rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+#home-button:hover { color: rgb(16,16,0); }
+
+/* Searchbar */
+.searchbar-container {
+    text-align: center;
+    margin: 20px 0;
+}
 #searchbar {
     padding: 15px;
     width: 400px;
     border-radius: 25px;
-    border-color:black;
+    border: 2px solid black;
+    background-color: #fff;
     transition: background 0.2s;
-    background-color: #FFFFFF;
+}
+#searchbar:hover { background-color: #dedede; }
+
+/* Container til Top 10 og Queue */
+.tables-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* gør det responsivt */
+    margin: 0 20px 40px 20px;
 }
 
-#searchbar:hover {
-    background-color: #dedede;
+/* Tabeller */
+.top_10, .queue {
+    width: 48%;
+    border-collapse: separate;
+    border-spacing: 0 12px;
+    border: 1px solid black;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-
-/*Besked kommer liger over "box"*/
-#message {
-  position: absolute;
-  bottom: 90px; /* lidt over boksen */
-  left: 50%;
-  transform: translateX(-50%);
-  color: rgb(5, 1, 1);
-  font-weight: bold;
-  opacity: 0; /* start skjult */
-  transition: opacity 1.5s; /* fade ud over 1,5 sek */
+/* Responsive: Queue under Top 10 på small screens */
+@media (max-width: 900px) {
+    .top_10, .queue { 
+        width: 100%;
+        margin-bottom: 20px;
+    }
 }
 
-.top-box {
-  display: flex; /* Gør boksen til en flex-container, så indholdet kan ligge på linje (vandret) */
-  justify-content: space-between; /* Fordeler elementerne: venstre helt til venstre, højre helt til højre, midten i midten */
-  align-items: center; /* Centrerer elementerne lodret i boksen */ 
-  background-color: #ce0707; /* Sætter baggrundsfarven */
-  color: rgb(255, 255, 255); /*Gør al tekst hvid */
-  padding: 10px 20px; /*Laver luft inde i boksen (10px top/bund, 20px venstre/højre) */
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2); /* Tilføjer en let skygge under boksen */
-  position: sticky; /*Gør boksen “klæbrig”, så den bliver øverst på siden ved scroll */
-  top: 0; /*Fastgør boksen til toppen af vinduet */ 
+/* Rækker styling */
+.top_10 tr, .queue tr {
+    background-color: #fff;
+    border: 2px solid #444;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-.left, .center, .right { 
-  flex: 1; /* Giv alle tre elementer lige meget plads, og lad dem vokse eller skrumpe efter behov */
+.top_10 th, .top_10 td,
+.queue th, .queue td {
+    padding: 12px;
+    text-align: center;
+    border: none;
 }
 
-.center {
-  text-align: center; /*Centrerer teksten horisontalt inde i elementet */
-  font-size: 1.3rem; /* Gør teksten større, relativt til root-font-size */
-  font-weight: bold; /* Gør teksten fed (tykkere) */
+.top_10 tr:hover, .queue tr:hover {
+    background-color: #f5f5f5;
+    transform: scale(1.01);
+    transition: 0.2s ease;
 }
 
-#home-button {
-  background: none;     /* Ingen baggrund */
-  border: none;         /* Ingen kant */
-  color: white;         /* Tekstfarve */
-  font-size: 1.3rem;
-  font-weight: bold;
-  cursor: pointer;      /* Markør bliver hånd */
-}
-
-#home-button:hover {
-  color: rgb(16, 16, 0);        /* Lidt effekt ved hover */
-}
-
-.right {
-  text-align: right; /* Flytter teksten i elementet helt til højre */
-}
-
-.top_10,
-.queue {
-  border-collapse: separate;  /* Giver der lov til at være plads i mellem rækkerne */
-  border-spacing: 0 12px;    
-  width: 35%; 
-  border: 1px solid black;              
-}
-
-/* Gør hver række sin egen boks */
-.top_10 tr,
-.queue tr {
-  background-color: #fff;
-  border: 2px solid #444;   
-  border-radius: 10px;          /* runder hjøner */
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* Giver lidt skygge til boksene */
-}
-
-.top_10 th, 
-.top_10 td,
-.queue th,
-.queue td {
-  padding: 12px;
-  text-align: center;
-  border: none;
-}
-
-/* Header */
-.top_10 th,
-.queue th{
-  background-color: #ffffff;
-  color: rgb(0, 0, 0);
-  border: none;
-  text-transform: uppercase;
-}
-
-/* Giver den flyvende effekt */
-.top_10 tr:hover,
-.queue tr:hover {
-  background-color: #f5f5f5;
-  transform: scale(1.01);
-  transition: 0.2s ease;
-}
-
+/* Review button */
 .review-btn {
-  background-color: #ffcb47;
-  padding: 8px 16px;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
+    background-color: #ffcb47;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
 }
+.review-btn:hover { background-color: #e0b03f; }
 
+/* Review panel */
 .review-panel {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: white;
-  border: 2px solid black;
-  padding: 16px;
-  border-radius: 12px;
-  width: 200px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: white;
+    border: 2px solid black;
+    padding: 16px;
+    border-radius: 12px;
+    width: 200px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    z-index: 200;
 }
 
 #purchase-btn {
-  margin-top: 10px;
-  width: 100%;
-  padding: 8px;
-  background: black;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+    padding: 8px;
+    background: black;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+#purchase-btn:hover { background-color: #444; }
+
+/* Besked */
+#message {
+    position: absolute;
+    bottom: 90px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgb(5,1,1);
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 1.5s;
 }
