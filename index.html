@@ -19,7 +19,7 @@
     </div>
     
     <div class="right"> <!-- Højre side af top-box -->
-      <span class="review-text">Review (0)</span> <!-- Med (span) Kun tallet opdateres — teksten 'Review' er uændret -->
+  <button id="review-button" class="review-btn">Review (0)</button><!-- Med (span) Kun tallet opdateres — teksten 'Review' er uændret -->
     </div>
   </header>
  
@@ -37,61 +37,61 @@
                 <td>1</td>
                 <td>Enter Sandman</td>
                 <td>Metallica</td>
-                <td>Select</td>
+                <td><button onclick="selectSong('Enter Sandman')">Select</button></td>
             </tr>
             <tr>
                 <td>2</td>
                 <td>Espresso</td>
                 <td>Sabrina Carpenter</td>
-                <td>Select</td>
+                <td><button onclick="selectSong('Espresso')">Select</button></td>
             </tr>
             <tr>
                 <td>3</td>
                 <td>Whip/Nae Nae</td>
                 <td>Silento</td>
-                <td>Select</td>
+                <td><button onclick="selectSong('Whip/Nae Nae')">Select</button></td>
             </tr>
             <tr>
                 <td>4</td>
                 <td>Sultans of Swing</td>
                 <td>Dire Straits</td>
-                <td>Select</td>
+                <td><button onclick="selectSong('Sultans of Swing')">Select</button></td>
             </tr>
             <tr>
                 <td>5</td>
                 <td>Gangnam Style</td>
                 <td>PSY</td>
-                <td>Select</td>
+                <td><button onclick="selectSong('Gangnam Style')">Select</button></td>
             </tr>
             <tr>
                 <td>6</td>
                 <td>Knokler Hårdt</td>
                 <td>Gilli</td>
-                <td>Select</td>
+                <td><button onclick="selectSong('Knokler Hårdt')">Select</button></td>
             </tr>
             <tr>
                 <td>7</td>
                 <td>Roar</td>
                 <td>Katy Perry</td>
-                <td>Select</td>
+                <td><button onclick="selectSong('Roar')">Select</button></td>
             </tr>
             <tr>
                 <td>8</td>
                 <td>Wonderwall</td>
                 <td>Oasis</td>
-                <td>Select</td>
+                <td><button onclick="selectSong('Wonderwall')">Select</button></td>
             </tr>
             <tr>
                 <td>9</td>
                 <td>Boulevard of Broken Dreams</td>
                 <td>Green day</td>
-                <td>Select</td>
+                <td><button onclick="selectSong('Boulevard of Broken Dreams')">Select</button></td>
             </tr>
             <tr>
                 <td>10</td>
                 <td>The Box</td>
                 <td>Roddy Rich</td>
-                <td>Select</td>
+                <td><button onclick="selectSong('The Box')">Select</button></td>
             </tr>
         </tbody>
 
@@ -171,14 +171,14 @@
         <input type="text" id="searchbar" placeholder="Søg efter sange, artister, albums...">
        </div>
 
-       <div class="box">
-        <p id="status">You have selected 0 songs.</p> <!--Her vises hvor mange sange der er valgt-->
+        <div id="review-panel" class="review-panel" style="display:none;">
+            <h3>Your Selection</h3>
+            <ul id="song-list"></ul>
 
+            <p id="price-info"></p>
 
-       </div><!-- Knapperne kalder funktionen "selectSong()" når man klikker -->
-       <button onclick="selectSong()">song 1</button>
-       <button onclick="selectSong()">song 2</button>
-       <button onclick="selectSong()">song 3</button>
+            <button id="purchase-btn">Purchase</button>
+        </div>
 
        <script src="script.js"></script>
        <p id="message"></p><!-- Her vises en besked hvis man prøver at vælge for mange -->
